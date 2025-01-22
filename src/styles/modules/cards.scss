@@ -1,0 +1,25 @@
+@use "./_variables" as *;
+@use "./_mixins" as *;
+
+.cards {
+  overflow: hidden;
+  @include set-container-default();
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    list-style: none;
+    transition: transform 0.5s ease;
+  }
+
+  &__item {
+    min-width: 33.33%;
+    box-sizing: border-box;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 5px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+}

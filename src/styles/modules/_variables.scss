@@ -1,1 +1,22 @@
 $c-red: red;
+
+$w-container-desktop: 1100px;
+
+$breakpoints: (
+  sm: 360px,
+  ms: 435px,
+  md: 768px,
+  lg: 1024px,
+  lp: 1280px, //large-plus
+  xl: 1440px,
+  xxl: 1920px
+);
+
+$container-max-widths: (
+  sm: calc(338 / 360 * 100%),
+  md: calc(728 / 768 * 100%),
+  lg: calc(984 / 1024 * 100%),
+  xl: calc(1280 / 1440 * 100%),
+  xxl: 1760px,
+  unlimited: 100%
+);
