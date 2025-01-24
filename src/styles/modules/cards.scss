@@ -21,6 +21,7 @@
     background: linear-gradient(217deg, $c-pink, rgba(255,0,0,0) 70.71%),
             linear-gradient(127deg, $c-yellow, rgba(0,255,0,0) 70.71%),
             linear-gradient(336deg, $c-base-light, rgba(0,0,255,0) 70.71%);
+            background-color: $c-yellow;
     border-radius: 10px;
     text-align: center;
     @extend %flex-column-center;

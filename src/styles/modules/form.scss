@@ -1,0 +1,53 @@
+@use "./_variables" as *;
+@use "./_mixins" as *;
+@use "./_templates" as *;
+
+.form {
+  @include set-container-default();
+  width: 100%;
+  @extend %flex-column-center;
+  gap: 1.5rem;
+
+  &__fieldset {
+    border: none;
+    padding: 0;
+  }
+
+  &__legend {
+    @include set-font-size(20px, 2rem, 500);
+    margin-bottom: 0.5rem;
+  }
+
+  &__error {
+    opacity: 0;
+  }
+
+  &__field {
+    @extend %flex-column-center;
+
+    &-label {
+        @include set-font-size(1rem, 1.5rem, 500);
+        margin-bottom: 0.5rem;
+    }
+  }
+
+  &__input {
+    background: transparent;
+    border: 2px solid $c-pink;
+    border-radius: 8px;
+    padding: 0.5rem;
+    color: $c-light;
+    margin-top: 0.5rem;
+
+    &::placeholder {
+        color: $c-yellow;
+    }
+
+    &_text {}
+
+    &:active, &:focus {
+        box-sizing: border-box;
+        border-color: $c-yellow;
+    }
+  }
+}
