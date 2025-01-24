@@ -1,4 +1,7 @@
-@use './modules/_variables' as *;
+
 @use './modules/_reset' as *;
+@use './modules/body' as *;
+@use './modules/picture' as *;
+@use './modules/main' as *;
 @use './modules/header' as *;
 @use './modules/cards' as *;

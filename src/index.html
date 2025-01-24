@@ -4,24 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
     <header class="header">
-        <p>NebulaForge</p>
+        <p class="header__logo">NebulaForge</p>
         <div class="header__links">
             <a href="#about" class="header__link">О нас</a>
             <a href="#cards" class="header__link">Известные изделия</a>
-            <a href="#construsctor" class="header__link">Конструктор</a>
+            <a href="#constructor" class="header__link">Конструктор</a>
             <a href="#footer" class="header__link">Контакты</a>
         </div>
     </header>
 
     <main class="main">
-        <section class="cards">
+        <section class="cards" id="cards">
             <h2 class="subtitle">Известные изделия</h2>
             <div class="cards__slider">
-                <button class="cards__btn cards__btn-prev">←</button>
+                
                 <ul id="cardsList" class="cards__list">
                     <template id="cardTemplate">
                         <li class="cards__item">
@@ -30,11 +35,15 @@
                         </li>
                     </template>
                 </ul>
-                <button class="cards__btn cards__btn-next">→</button>
+
+                <div class="cards__btns">
+                    <button class="cards__btn cards__btn-prev"><</button>
+                    <button class="cards__btn cards__btn-next">></button>
+                </div>
             </div>
         </section>
 
-        <section class="form">
+        <section class="form" id="constructor">
             <h2>Конструктор артефактов</h2>
             <form class="form__form">
 
@@ -130,6 +139,9 @@
             <p>Галактика Андромеды, звезда Х34, станция «Ковчег 7»</p>
         </div>
     </footer>
+
+    <!-- <img src="./public/images/picture1.png" class="picture picture_up" />
+    <img src="./public/images/picture2.png" class="picture picture_md" /> -->
 
     <script src="./js/index.js" type="module" defer></script>
 </body>

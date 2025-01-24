@@ -1,0 +1,16 @@
+.picture {
+    position: absolute;
+    max-width: 300px;
+    object-fit: contain;
+    z-index: -1;
+
+    &_up {
+        right: 0;
+        top: 20%;
+    }
+    &_md {
+        left: 5%;
+        top: 50%;
+        transform: rotateX('90');
+    }
+}

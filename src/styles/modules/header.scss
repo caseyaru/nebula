@@ -1,5 +1,29 @@
 @use './_variables' as *;
+@use './_mixins' as *;
+@use './templates' as *;
 
 .header {
-    color: $c-red;
+    padding: 1rem 2rem;
+    @extend %flex-row-center;
+    justify-content: space-between;
+
+    &__logo {
+        @include set-font-size(2rem, 2rem, 600);
+        cursor:default;
+    }
+
+    &__links {
+        @extend %flex-row-center;
+        gap: 1rem;
+    }
+
+    &__link {
+        color: $c-pink;
+        text-decoration: none;
+        transition: $tr-3;
+
+        &:hover {
+            color: $c-yellow;
+        }
+    }
 }

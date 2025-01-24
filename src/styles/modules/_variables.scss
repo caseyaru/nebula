@@ -1,6 +1,16 @@
-$c-red: red;
+$c-dark: #0c111f;
+$c-pink: #b66570;
+$c-base: #512f5c;
+$c-yellow: #ed9e6f;
+$c-base-dark: #2d1f44;
+$c-base-light: #80466e;
+$c-light: #f1f2ef;
 
 $w-container-desktop: 1100px;
+
+$ff-base: "Rubik", serif;
+
+$tr-3: all 0.3s ease;
 
 $breakpoints: (
   sm: 360px,

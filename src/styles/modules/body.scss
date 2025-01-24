@@ -1,0 +1,17 @@
+@use "./_variables" as *;
+
+body {
+  position: relative;
+  color: $c-light;
+  font-family: $ff-base;
+  background-color: $c-dark;
+}
+
+// body::before {
+//   content: "";
+//   position: fixed;
+//   inset: 0 0 0 0;
+//   z-index: -1;
+//   background: url("public/images/mainbg.png") center / cover no-repeat;
+//   filter: blur(2px) brightness(0.5);
+// }
