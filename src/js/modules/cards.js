@@ -57,6 +57,5 @@ nextBtn.addEventListener("click", () => {
 });
 
 export const initCards = () => {
-  console.log("скрипт подключен");
   getCards();
 };

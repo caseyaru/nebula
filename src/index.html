@@ -4,24 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
     <header class="header">
-        <p>NebulaForge</p>
+        <p class="header__logo">NebulaForge</p>
         <div class="header__links">
             <a href="#about" class="header__link">О нас</a>
             <a href="#cards" class="header__link">Известные изделия</a>
-            <a href="#construsctor" class="header__link">Конструктор</a>
+            <a href="#constructor" class="header__link">Конструктор</a>
             <a href="#footer" class="header__link">Контакты</a>
         </div>
     </header>
 
     <main class="main">
-        <section class="cards">
+        <section class="cards" id="cards">
             <h2 class="subtitle">Известные изделия</h2>
             <div class="cards__slider">
-                <button class="cards__btn cards__btn-prev">←</button>
+                
                 <ul id="cardsList" class="cards__list">
                     <template id="cardTemplate">
                         <li class="cards__item">
@@ -30,11 +35,15 @@
                         </li>
                     </template>
                 </ul>
-                <button class="cards__btn cards__btn-next">→</button>
+
+                <div class="cards__btns">
+                    <button class="cards__btn cards__btn-prev"><</button>
+                    <button class="cards__btn cards__btn-next">></button>
+                </div>
             </div>
         </section>
 
-        <section class="form">
+        <section class="form" id="constructor">
             <h2>Конструктор артефактов</h2>
             <form class="form__form">
 
@@ -42,20 +51,20 @@
                     <legend class="form__legend">Характеристики артефакта</legend>
 
                     <div class="form__field">
-                        <label for="form-material">Основной материал</label>
-                        <select class="form__select" id="form-material">
-                            <option value="" selected>Свет</option>
-                            <option value="">Туманность</option>
-                            <option value="">Антиматерия</option>
+                        <label for="form-material" class="form__field-label">Основной материал</label>
+                        <select class="form__select form__input" id="form-material">
+                            <option selected>Свет</option>
+                            <option>Туманность</option>
+                            <option>Антиматерия</option>
                         </select>
                         <p class="form__error">Это поле обязательное</p>
                     </div>
 
-                    <div>
-                        <p>
+                    <div class="form__field">
+                        <p class="form__field-label">
                             Применение
                         </p>
-                        <div>
+                        <div class="form__checkbox-container">
                             <div class="form__checkbox">
                                 <input type="checkbox" id="form-checkbox-0" class="form__checkbox-input" />
                                 <label for="form-checkbox-0" class="form__checkbox-label">Ускорение</label>
@@ -83,9 +92,9 @@
                         </div>
                     </div>
 
-                    <div>
-                        <label for="form-description" class="form__checkbox-label">Ваши пожелания</label>
-                        <textarea id="form-description" rows="5" class="form__textarea" placeholder="Хочу артефакт в форме амулета!"></textarea>
+                    <div class="form__field">
+                        <label for="form-description" class="form__label form__field-label">Ваши пожелания</label>
+                        <textarea id="form-description" rows="5" class="form__input" placeholder="Хочу артефакт в форме амулета!"></textarea>
                     </div>
 
                 </fieldset>
@@ -93,21 +102,21 @@
                 <fieldset class="form__fieldset">
                     <legend class="form__legend">Данные для связи</legend>
                     <div class="form__field">
-                        <label for="form-name" class="form__label">Ваше имя</label>
-                        <input class="form__input" id="name"/>
-                        <p class="form__error"></p>
+                        <label for="form-name" class="form__field-label">Ваше имя</label>
+                        <input class="form__input" id="name" class="form__input form__input_text"/>
+                        <p class="form__error">Пожалуйста, используйте только земную клавиатуру (кириллицу) и цифры</p>
                     </div>
                     <div class="form__field">
-                        <label for="form-name" class="form__label">Ваш космический ID для связи</label>
-                        <input class="form__input" id="name"/>
-                        <p class="form__error"></p>
+                        <label for="form-name" class="form__field-label">Ваш космический ID для связи</label>
+                        <input class="form__input" id="name" class="form__input form__input_text"/>
+                        <p class="form__error">ID должен содержать только цифры</p>
                     </div>
                 </fieldset>
 
                 <div class="form__checkbox">
-                    <input type="checkbox" id="form-checkbox-5" class="form__checkbox-input" />
-                    <label for="form-checkbox-5" class="form__checkbox-label">
-                        Я соглашаюсь
+                    <input type="checkbox" id="form-agree" class="form__checkbox-input" />
+                    <label for="form-agree" class="form__checkbox-label">
+                        Я соглашаюсь с&nbsp;
                         <a class="form__link" href="#">обработкой межгалактических данных</a>
                     </label>
                 </div>
@@ -130,6 +139,9 @@
             <p>Галактика Андромеды, звезда Х34, станция «Ковчег 7»</p>
         </div>
     </footer>
+
+    <img src="./public/images/picture1.png" class="picture picture_up" />
+    <img src="./public/images/picture2.png" class="picture picture_md" />
 
     <script src="./js/index.js" type="module" defer></script>
 </body>

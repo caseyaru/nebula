@@ -1,0 +1,10 @@
+@use "./_variables" as *;
+
+body {
+  position: relative;
+  color: $c-light;
+  font-family: $ff-base;
+  background-color: $c-dark;
+  
+  overflow-x: hidden;
+}

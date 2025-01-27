@@ -1,5 +1,6 @@
 @use "./_variables" as *;
 @use "./_mixins" as *;
+@use "./_templates" as *;
 
 .cards {
   overflow: hidden;
@@ -11,15 +12,43 @@
     gap: 20px;
     list-style: none;
     transition: transform 0.5s ease;
+    margin: 1rem 0;
   }
 
   &__item {
-    min-width: 33.33%;
-    box-sizing: border-box;
+    min-width: calc(100% / 3 - 15px);
     padding: 20px;
-    border: 1px solid #ccc;
-    margin: 5px;
-    background-color: #f9f9f9;
+    background: linear-gradient(217deg, $c-pink, rgba(255,0,0,0) 70.71%),
+            linear-gradient(127deg, $c-yellow, rgba(0,255,0,0) 70.71%),
+            linear-gradient(336deg, $c-base-light, rgba(0,0,255,0) 70.71%);
+            background-color: $c-yellow;
+    border-radius: 10px;
     text-align: center;
+    @extend %flex-column-center;
+    gap: 1rem;
+
+    &:last-of-type {
+      margin-right: 20px;
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+  }
+
+  &__btns {
+    @extend %flex-row-center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  &__btn {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border: $c-yellow;
+    color: $c-dark;
+    background-color: $c-yellow;
   }
 }
