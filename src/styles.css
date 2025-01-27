@@ -24,22 +24,52 @@ body {
   color: #f1f2ef;
   font-family: "Rubik", serif;
   background-color: #0c111f;
+  overflow-x: hidden;
 }
 
+@keyframes swing-and-rotate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotate(15deg);
+  }
+  50% {
+    transform: translateY(0) rotate(0deg);
+  }
+  75% {
+    transform: translateY(10px) rotate(-15deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+@keyframes blink {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
 .picture {
   position: absolute;
   max-width: 300px;
   object-fit: contain;
   z-index: -1;
+  opacity: 0.8;
+  animation: swing-and-rotate 15s infinite, blink 5s infinite;
+  overflow: hidden;
 }
 .picture_up {
   right: 0;
   top: 20%;
+  animation-delay: 0s, 0s;
 }
 .picture_md {
-  left: 5%;
+  left: 0;
   top: 50%;
-  transform: rotateX("90");
+  animation-delay: 0.5s, 2s;
 }
 
 .cards__btns, .header, .header__links {
@@ -154,7 +184,7 @@ body {
   font-weight: 500;
 }
 .form__input {
-  background: transparent;
+  background: #0c111f;
   border: 2px solid #b66570;
   border-radius: 8px;
   padding: 0.5rem;
