@@ -11,6 +11,7 @@
   &__fieldset {
     border: none;
     padding: 0;
+    margin-bottom: 2rem;
   }
 
   &__legend {
@@ -19,6 +20,9 @@
   }
 
   &__error {
+    @include set-font-size(12px, 1rem, 400);
+    color: $c-base-light;
+    margin-top: 0.2rem;
     opacity: 0;
   }
 
@@ -26,8 +30,7 @@
     @extend %flex-column-center;
 
     &-label {
-        @include set-font-size(1rem, 1.5rem, 500);
-        margin-bottom: 0.5rem;
+      @include set-font-size(1rem, 1.5rem, 500);
     }
   }
 
@@ -38,16 +41,104 @@
     padding: 0.5rem;
     color: $c-light;
     margin-top: 0.5rem;
+    transition: $tr-3;
 
     &::placeholder {
-        color: $c-yellow;
+      color: $c-yellow;
     }
 
-    &_text {}
+    &:active,
+    &:focus {
+      border-color: $c-yellow;
+      outline: none;
+    }
+  }
 
-    &:active, &:focus {
+  &__select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+
+    &:focus {
+      box-sizing: border-box;
+      border-color: $c-yellow;
+      outline: none;
+    }
+
+    & option {
+      background-color: $c-base;
+      color: $c-light;
+    }
+  }
+
+  &__checkbox {
+    &-input {
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+    }
+
+    &-label {
+      cursor: pointer;
+      align-items: center;
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: row;
+
+      & > a {
+        color: $c-yellow;
+        text-decoration: underline;
+        display: inline;
+      }
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        flex-shrink: 0;
+        flex-grow: 0;
+        border: 1px solid $c-pink;
         box-sizing: border-box;
-        border-color: $c-yellow;
+        border-radius: 2px;
+        margin-right: 0.5em;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 50% 50%;
+        cursor: pointer;
+      }
+    }
+
+    &-input:checked + &-label::before {
+      border: none;
+      background-size: 100%;
+      background-color: $c-yellow;
+    }
+
+    &-container {
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__submit {
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    background: linear-gradient(217deg, $c-pink, rgba(255, 0, 0, 0) 70.71%),
+      linear-gradient(127deg, $c-yellow, rgba(0, 255, 0, 0) 70.71%),
+      linear-gradient(336deg, $c-base-light, rgba(0, 0, 255, 0) 70.71%);
+    background-color: $c-yellow;
+    border-color: transparent;
+    color: $c-base-dark;
+    @include set-font-size(1rem, 1.5rem, 500);
+    cursor: pointer;
+    transition: $tr-3;
+
+    &:hover {
+      background-color: $c-base;
+      color: $c-light;
     }
   }
 }

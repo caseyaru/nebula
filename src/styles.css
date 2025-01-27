@@ -132,6 +132,7 @@ body {
 .form__fieldset {
   border: none;
   padding: 0;
+  margin-bottom: 2rem;
 }
 .form__legend {
   font-size: 20px;
@@ -140,13 +141,17 @@ body {
   margin-bottom: 0.5rem;
 }
 .form__error {
+  font-size: 12px;
+  line-height: 1rem;
+  font-weight: 400;
+  color: #80466e;
+  margin-top: 0.2rem;
   opacity: 0;
 }
 .form__field-label {
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 500;
-  margin-bottom: 0.5rem;
 }
 .form__input {
   background: transparent;
@@ -155,13 +160,89 @@ body {
   padding: 0.5rem;
   color: #f1f2ef;
   margin-top: 0.5rem;
+  transition: all 0.3s ease;
 }
 .form__input::placeholder {
   color: #ed9e6f;
 }
 .form__input:active, .form__input:focus {
+  border-color: #ed9e6f;
+  outline: none;
+}
+.form__select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+.form__select:focus {
   box-sizing: border-box;
   border-color: #ed9e6f;
+  outline: none;
+}
+.form__select option {
+  background-color: #512f5c;
+  color: #f1f2ef;
+}
+.form__checkbox-input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.form__checkbox-label {
+  cursor: pointer;
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+.form__checkbox-label > a {
+  color: #ed9e6f;
+  text-decoration: underline;
+  display: inline;
+}
+.form__checkbox-label::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid #b66570;
+  box-sizing: border-box;
+  border-radius: 2px;
+  margin-right: 0.5em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+  cursor: pointer;
+}
+.form__checkbox-input:checked + .form__checkbox-label::before {
+  border: none;
+  background-size: 100%;
+  background-color: #ed9e6f;
+}
+.form__checkbox-container {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+.form__submit {
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  background: linear-gradient(217deg, #b66570, rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, #ed9e6f, rgba(0, 255, 0, 0) 70.71%), linear-gradient(336deg, #80466e, rgba(0, 0, 255, 0) 70.71%);
+  background-color: #ed9e6f;
+  border-color: transparent;
+  color: #2d1f44;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.form__submit:hover {
+  background-color: #512f5c;
+  color: #f1f2ef;
 }
 
 /*# sourceMappingURL=styles.css.map */

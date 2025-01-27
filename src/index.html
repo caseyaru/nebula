@@ -52,10 +52,10 @@
 
                     <div class="form__field">
                         <label for="form-material" class="form__field-label">Основной материал</label>
-                        <select class="form__select" id="form-material">
-                            <option value="" selected>Свет</option>
-                            <option value="">Туманность</option>
-                            <option value="">Антиматерия</option>
+                        <select class="form__select form__input" id="form-material">
+                            <option selected>Свет</option>
+                            <option>Туманность</option>
+                            <option>Антиматерия</option>
                         </select>
                         <p class="form__error">Это поле обязательное</p>
                     </div>
@@ -64,7 +64,7 @@
                         <p class="form__field-label">
                             Применение
                         </p>
-                        <div>
+                        <div class="form__checkbox-container">
                             <div class="form__checkbox">
                                 <input type="checkbox" id="form-checkbox-0" class="form__checkbox-input" />
                                 <label for="form-checkbox-0" class="form__checkbox-label">Ускорение</label>
@@ -92,9 +92,9 @@
                         </div>
                     </div>
 
-                    <div>
-                        <label for="form-description" class="form__checkbox-label">Ваши пожелания</label>
-                        <textarea id="form-description" rows="5" class="form__input_textarea" placeholder="Хочу артефакт в форме амулета!"></textarea>
+                    <div class="form__field">
+                        <label for="form-description" class="form__label form__field-label">Ваши пожелания</label>
+                        <textarea id="form-description" rows="5" class="form__input" placeholder="Хочу артефакт в форме амулета!"></textarea>
                     </div>
 
                 </fieldset>
@@ -102,21 +102,21 @@
                 <fieldset class="form__fieldset">
                     <legend class="form__legend">Данные для связи</legend>
                     <div class="form__field">
-                        <label for="form-name" class="form__label">Ваше имя</label>
-                        <input class="form__input" id="name" class="form__input_text"/>
+                        <label for="form-name" class="form__field-label">Ваше имя</label>
+                        <input class="form__input" id="name" class="form__input form__input_text"/>
                         <p class="form__error">Пожалуйста, используйте только земную клавиатуру (кириллицу) и цифры</p>
                     </div>
                     <div class="form__field">
-                        <label for="form-name" class="form__label">Ваш космический ID для связи</label>
-                        <input class="form__input" id="name" class="form__input_text"/>
+                        <label for="form-name" class="form__field-label">Ваш космический ID для связи</label>
+                        <input class="form__input" id="name" class="form__input form__input_text"/>
                         <p class="form__error">ID должен содержать только цифры</p>
                     </div>
                 </fieldset>
 
                 <div class="form__checkbox">
-                    <input type="checkbox" id="form-checkbox-5" class="form__checkbox-input" />
-                    <label for="form-checkbox-5" class="form__checkbox-label">
-                        Я соглашаюсь
+                    <input type="checkbox" id="form-agree" class="form__checkbox-input" />
+                    <label for="form-agree" class="form__checkbox-label">
+                        Я соглашаюсь с&nbsp;
                         <a class="form__link" href="#">обработкой межгалактических данных</a>
                     </label>
                 </div>
