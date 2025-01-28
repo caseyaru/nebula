@@ -21,7 +21,7 @@
   }
 }
 
-@mixin max-point-1($point) {
+@mixin max-point($point) {
   @if map-has-key($breakpoints, $point) {
     @media (max-width: calc(map-get($breakpoints, $point) - 1px)) {
       @content;

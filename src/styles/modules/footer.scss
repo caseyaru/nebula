@@ -4,11 +4,17 @@
 
 .footer {
   @extend %flex-column-center;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
   padding-bottom: 1.5rem;
   padding-top: 1.5rem;
   border-top: 1px solid $c-base-light;
+  @include max-point(lg) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 
   &__description {
     @include set-font-size(1.5rem, 2.5rem, 400);
@@ -16,7 +22,12 @@
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
+    background-image: -webkit-gradient(linear, left top, right top, from($c-pink), to($c-yellow));
+    background-image: -o-linear-gradient(left, $c-pink, $c-yellow);
     background-image: linear-gradient(to right, $c-pink, $c-yellow);
+    @include max-point(lg) {
+      @include set-font-size(1rem, 1.5rem, 400);
+    }
   }
 
   &__contacts {
@@ -25,6 +36,13 @@
     color: $c-light;
     opacity: 0.8;
     @include set-font-size(1rem, 1.5rem, 400);
+    @include max-point(lg) {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      gap: 0.5rem;
+    }
   }
 
   &__author {

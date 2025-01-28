@@ -1,18 +1,55 @@
-@keyframes swing-and-rotate {
+@-webkit-keyframes swing-and-rotate {
     0% {
-        transform: translateY(0) rotate(0deg);
+        -webkit-transform: translateY(0) rotate(0deg);
+                transform: translateY(0) rotate(0deg);
     }
     25% {
-        transform: translateY(-10px) rotate(15deg);
+        -webkit-transform: translateY(-10px) rotate(15deg);
+                transform: translateY(-10px) rotate(15deg);
     }
     50% {
-        transform: translateY(0) rotate(0deg);
+        -webkit-transform: translateY(0) rotate(0deg);
+                transform: translateY(0) rotate(0deg);
     }
     75% {
-        transform: translateY(10px) rotate(-15deg);
+        -webkit-transform: translateY(10px) rotate(-15deg);
+                transform: translateY(10px) rotate(-15deg);
     }
     100% {
-        transform: translateY(0) rotate(0deg);
+        -webkit-transform: translateY(0) rotate(0deg);
+                transform: translateY(0) rotate(0deg);
+    }
+}
+
+@keyframes swing-and-rotate {
+    0% {
+        -webkit-transform: translateY(0) rotate(0deg);
+                transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        -webkit-transform: translateY(-10px) rotate(15deg);
+                transform: translateY(-10px) rotate(15deg);
+    }
+    50% {
+        -webkit-transform: translateY(0) rotate(0deg);
+                transform: translateY(0) rotate(0deg);
+    }
+    75% {
+        -webkit-transform: translateY(10px) rotate(-15deg);
+                transform: translateY(10px) rotate(-15deg);
+    }
+    100% {
+        -webkit-transform: translateY(0) rotate(0deg);
+                transform: translateY(0) rotate(0deg);
+    }
+}
+
+@-webkit-keyframes blink {
+    0%, 100% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 1;
     }
 }
 
@@ -28,20 +65,31 @@
 .picture {
     position: absolute;
     max-width: 300px;
-    object-fit: contain;
+    -o-object-fit: contain;
+       object-fit: contain;
     z-index: -1;
     opacity: 0.8;
-    animation: swing-and-rotate 15s infinite, blink 5s infinite;
+    -webkit-animation: swing-and-rotate 15s infinite, blink 5s infinite;
+            animation: swing-and-rotate 15s infinite, blink 5s infinite;
     overflow: hidden;
 
     &_up {
         right: 0;
         top: 20%;
-        animation-delay: 0s, 0s;
+        -webkit-animation-delay: 0s, 0s;
+                animation-delay: 0s, 0s;
     }
     &_md {
         left: 0;
-        top: 50%;
-        animation-delay: 0.5s, 2s;
+        top: 45%;
+        -webkit-animation-delay: 0.5s, 2s;
+                animation-delay: 0.5s, 2s;
+    }
+    &_dw {
+        max-width: 200px;
+        right: 15%;
+        top: 75%;
+        -webkit-animation-delay: 0.5s, 2s;
+                animation-delay: 0.5s, 2s;
     }
 }
