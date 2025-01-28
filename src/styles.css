@@ -72,13 +72,13 @@ body {
   animation-delay: 0.5s, 2s;
 }
 
-.cards__btns, .header, .header__links {
+.footer__contacts, .cards__btns, .header, .header__links {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.form, .form__field, .cards__item, .main {
+.footer, .form, .form__field, .cards__item, .main {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -273,6 +273,44 @@ body {
 .form__submit:hover {
   background-color: #512f5c;
   color: #f1f2ef;
+}
+
+.footer {
+  align-items: center;
+  text-align: center;
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #80466e;
+}
+.footer__description {
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(to right, #b66570, #ed9e6f);
+}
+.footer__contacts {
+  gap: 5rem;
+  color: #f1f2ef;
+  opacity: 0.8;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+}
+.footer__author {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  line-height: 1rem;
+  font-weight: 400;
+  color: #f1f2ef;
+  opacity: 0.5;
+}
+.footer__author > p > a {
+  text-decoration: none;
+  color: #ed9e6f;
 }
 
 /*# sourceMappingURL=styles.css.map */

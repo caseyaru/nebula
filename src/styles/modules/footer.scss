@@ -1,0 +1,40 @@
+@use "./_variables" as *;
+@use "./_mixins" as *;
+@use "./templates" as *;
+
+.footer {
+  @extend %flex-column-center;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid $c-base-light;
+
+  &__description {
+    @include set-font-size(1.5rem, 2.5rem, 400);
+    margin-bottom: 1.5rem;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: linear-gradient(to right, $c-pink, $c-yellow);
+  }
+
+  &__contacts {
+    @extend %flex-row-center;
+    gap: 5rem;
+    color: $c-light;
+    opacity: 0.8;
+    @include set-font-size(1rem, 1.5rem, 400);
+  }
+
+  &__author {
+    margin-top: 0.5rem;
+    @include set-font-size(0.8rem, 1rem, 400);
+    color: $c-light;
+    opacity: 0.5;
+    & > p > a {
+      text-decoration: none;
+      color: $c-yellow;
+    }
+  }
+}
