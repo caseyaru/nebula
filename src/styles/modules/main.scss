@@ -1,7 +1,16 @@
+@use "./_variables" as *;
+@use "./_mixins" as *;
 @use "./_templates" as *;
 
 .main {
     margin: 3rem auto 4rem;
     @extend %flex-column-center;
     gap: 3rem;
+    @include max-point(lg) {
+        padding: 0 1rem;
+    }
+
+    &__title {
+        padding-bottom: 0.5rem;
+    }
 }

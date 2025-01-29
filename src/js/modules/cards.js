@@ -31,13 +31,33 @@ const drawCards = (cards) => {
 
 const updateVisibleCards = () => {
   const totalCards = cardsData.length;
-  const offset = currentIndex * (100 / visibleCards);
+  const containerWidth = list.offsetWidth;
+  const cardWidth = containerWidth;
+  const pixelOffset = (20 / containerWidth) * 100;
+
+  let offset;
+  if (visibleCards === 1) {
+    offset = (currentIndex * cardWidth / containerWidth) * 100;
+  } else {
+    offset = (currentIndex / (totalCards - visibleCards)) * 100;
+    offset += currentIndex > 0 ? pixelOffset : 0;
+  }
+
   list.style.transform = `translateX(-${offset}%)`;
+};
+
+const updateVisibleCardsCount = () => {
+  if (window.innerWidth < 1024) {
+    visibleCards = 1;
+  } else {
+    visibleCards = 3;
+  }
+  updateVisibleCards();
 };
 
 const updateButtons = () => {
   prevBtn.disabled = currentIndex === 0;
-  nextBtn.disabled = currentIndex + 3 >= cardsData.length;
+  nextBtn.disabled = currentIndex + visibleCards >= cardsData.length;
 };
 
 prevBtn.addEventListener("click", () => {
@@ -49,13 +69,16 @@ prevBtn.addEventListener("click", () => {
 });
 
 nextBtn.addEventListener("click", () => {
-  if (currentIndex + 3 < cardsData.length) {
+  if (currentIndex + visibleCards < cardsData.length) {
     currentIndex++;
     updateVisibleCards();
     updateButtons();
   }
 });
 
+window.addEventListener('resize', updateVisibleCardsCount);
+
 export const initCards = () => {
   getCards();
+  updateVisibleCardsCount();
 };

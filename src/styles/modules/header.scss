@@ -5,21 +5,34 @@
 .header {
     padding: 1rem 2rem;
     @extend %flex-row-center;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 
     &__logo {
-        @include set-font-size(2rem, 2rem, 600);
-        cursor:default;
+        @include set-font-size(2rem, 2.3rem, 600);
+        cursor: default;
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        background-image: -webkit-gradient(linear, left top, right top, from($c-pink), to($c-yellow));
+        background-image: -o-linear-gradient(left, $c-pink, $c-yellow);
+        background-image: linear-gradient(to right, $c-pink, $c-yellow);
     }
 
     &__links {
         @extend %flex-row-center;
         gap: 1rem;
+        @include max-point(lg) {
+            display: none;
+        }
     }
 
     &__link {
-        color: $c-pink;
+        color: $c-light;
         text-decoration: none;
+        -webkit-transition: $tr-3;
+        -o-transition: $tr-3;
         transition: $tr-3;
 
         &:hover {
