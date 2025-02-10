@@ -80,7 +80,7 @@
 
             <div class="form__field">
               <p class="form__field-label">Применение</p>
-              <div class="form__checkbox-container">
+              <div class="form__checkbox-container" id="form-use">
                 <div class="form__checkbox">
                   <input
                     type="checkbox"
@@ -165,21 +165,21 @@
               <label for="form-name" class="form__field-label">Ваше имя</label>
               <input
                 class="form__input"
-                id="name"
+                id="form-name"
                 class="form__input form__input_text"
               />
-              <p class="form__error">
+              <p class="form__error" id="form-name-error">
                 Пожалуйста, используйте только земную клавиатуру (кириллицу) и
                 цифры
               </p>
             </div>
             <div class="form__field">
-              <label for="form-name" class="form__field-label"
+              <label for="form-number" class="form__field-label"
                 >Ваш космический ID для связи</label
               >
               <input
                 class="form__input"
-                id="name"
+                id="form-number"
                 class="form__input form__input_text"
               />
               <p class="form__error">ID должен содержать только цифры</p>
@@ -200,7 +200,7 @@
             </label>
           </div>
 
-          <button type="submit" class="form__submit">Отправить заявку</button>
+          <button type="submit" id="form-submit" class="form__submit">Отправить заявку</button>
         </form>
       </section>
     </main>
