@@ -426,6 +426,10 @@ body {
   background-color: #512f5c;
   color: #f1f2ef;
 }
+.form__submit:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
 
 .footer {
   -webkit-box-align: center;

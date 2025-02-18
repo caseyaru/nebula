@@ -186,5 +186,10 @@
       background-color: $c-base;
       color: $c-light;
     }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
   }
 }
