@@ -62,7 +62,7 @@
 
       <section class="form" id="constructor">
         <h2 class="main__title">Конструктор артефактов</h2>
-        <form class="form__form">
+        <form class="form__form" id="form" novalidate>
           <fieldset class="form__fieldset">
             <legend class="form__legend">Характеристики артефакта</legend>
 
@@ -70,7 +70,7 @@
               <label for="form-material" class="form__field-label"
                 >Основной материал</label
               >
-              <select class="form__select form__input" id="form-material">
+              <select class="form__select form__input" id="form-material" name="material">
                 <option selected>Свет</option>
                 <option>Туманность</option>
                 <option>Антиматерия</option>
@@ -86,6 +86,7 @@
                     type="checkbox"
                     id="form-checkbox-0"
                     class="form__checkbox-input"
+                    name="detail"
                   />
                   <label for="form-checkbox-0" class="form__checkbox-label"
                     >Ускорение</label
@@ -96,6 +97,7 @@
                     type="checkbox"
                     id="form-checkbox-1"
                     class="form__checkbox-input"
+                    name="detail"
                   />
                   <label for="form-checkbox-1" class="form__checkbox-label"
                     >Телепортация</label
@@ -106,6 +108,7 @@
                     type="checkbox"
                     id="form-checkbox-2"
                     class="form__checkbox-input"
+                    name="detail"
                   />
                   <label for="form-checkbox-2" class="form__checkbox-label"
                     >Защита</label
@@ -116,6 +119,7 @@
                     type="checkbox"
                     id="form-checkbox-3"
                     class="form__checkbox-input"
+                    name="detail"
                   />
                   <label for="form-checkbox-3" class="form__checkbox-label"
                     >Невидимость</label
@@ -126,6 +130,7 @@
                     type="checkbox"
                     id="form-checkbox-4"
                     class="form__checkbox-input"
+                    name="detail"
                   />
                   <label for="form-checkbox-4" class="form__checkbox-label"
                     >Лечение</label
@@ -136,6 +141,7 @@
                     type="checkbox"
                     id="form-checkbox-5"
                     class="form__checkbox-input"
+                    name="detail"
                   />
                   <label for="form-checkbox-5" class="form__checkbox-label"
                     >Атака</label
@@ -155,6 +161,7 @@
                 rows="5"
                 class="form__input"
                 placeholder="Хочу артефакт в форме амулета!"
+                name="description"
               ></textarea>
             </div>
           </fieldset>
@@ -167,10 +174,11 @@
                 class="form__input"
                 id="form-name"
                 class="form__input form__input_text"
+                pattern="[А-Яа-яЁё]"
+                name="name"
               />
               <p class="form__error" id="form-name-error">
-                Пожалуйста, используйте только земную клавиатуру (кириллицу) и
-                цифры
+                Пожалуйста, используйте только земную клавиатуру (кириллицу)
               </p>
             </div>
             <div class="form__field">
@@ -181,8 +189,11 @@
                 class="form__input"
                 id="form-number"
                 class="form__input form__input_text"
+                placeholder="XX-XXXX-XXXX-X"
+                pattern="[0-9]{2}-[0-9]{4}-[0-9]{4}-[0-9]{1}"
+                name="number"
               />
-              <p class="form__error">ID должен содержать только цифры</p>
+              <p class="form__error" id="form-number-error">ID должен содержать только цифры</p>
             </div>
           </fieldset>
 

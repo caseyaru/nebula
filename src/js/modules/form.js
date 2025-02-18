@@ -1,4 +1,4 @@
-const form = document.querySelector("#constructor");
+const form = document.querySelector("#form");
 
 const selectInput = form.querySelector("#form-material");
 
@@ -9,19 +9,19 @@ const descriptionInput = form.querySelector("#form-description");
 const nameInput = form.querySelector("#form-name");
 const nameError = form.querySelector("#form-name-error");
 const numberInput = form.querySelector("#form-number");
+const numberError = form.querySelector("#form-number-error");
 const agreementInput = form.querySelector("#form-agree");
 
 const submitButton = form.querySelector("#form-submit");
+submitButton.disabled = true;
 
 const validateInput = (input, error) => {
   const pattern = new RegExp(input.pattern);
   if (!pattern.test(input.value)) {
-    error.style.display = "flex";
-    input.classList.add("form-control_error");
+    error.style.opacity = "1";
     return false;
   } else {
-    error.style.display = "none";
-    input.classList.remove("form-control_error");
+    error.style.opacity = "0";
     return true;
   }
 };
@@ -41,13 +41,16 @@ const validateNameInput = () => {
   return validateInput(nameInput, nameError);
 };
 
+const validateNumberInput = () => {
+  return validateInput(numberInput, numberError);
+};
+
 const validateForm = () => {
   const isNameValid = validateNameInput();
+  const isNumberValid = validateNumberInput();
   const isAgreementValid = agreementInput.checked;
 
-  console.log(isNameValid, isAgreementValid, submitButton.disabled)
-
-  if (isNameValid && isAgreementValid) {
+  if (isNameValid && isNumberValid && isAgreementValid) {
     submitButton.disabled = false;
   } else {
     submitButton.disabled = true;
@@ -56,6 +59,7 @@ const validateForm = () => {
 
 const validateAll = () => {
   nameInput.addEventListener("input", validateForm);
+  numberInput.addEventListener("input", validateForm);
   agreementInput.addEventListener("change", validateForm);
 };
 
